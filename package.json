@@ -1,0 +1,40 @@
+{
+  "name": "markdown-headings-cli",
+  "version": "0.0.0",
+  "description": "Command line interface for markdown-headings",
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "bin": "cli.js",
+  "files": [
+    "cli.js"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1000ch/markdown-headings-cli.git"
+  },
+  "author": "1000ch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1000ch/markdown-headings-cli/issues"
+  },
+  "homepage": "https://github.com/1000ch/markdown-headings-cli#readme",
+  "dependencies": {
+    "get-stdin": "^8.0.0",
+    "globby": "^11.0.0",
+    "is-string": "^1.0.4",
+    "markdown-headings": "^2.0.0",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "ava": "^3.10.1",
+    "execa": "^4.0.3",
+    "xo": "^0.32.1"
+  },
+  "xo": {
+    "space": 2
+  }
+}
