@@ -5,7 +5,9 @@
   "scripts": {
     "test": "xo && ava"
   },
-  "bin": "cli.js",
+  "bin": {
+    "markdown-headings": "cli.js"
+  },
   "files": [
     "cli.js"
   ],
