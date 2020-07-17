@@ -1,6 +1,6 @@
 {
   "name": "markdown-headings-cli",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Command line interface for markdown-headings",
   "scripts": {
     "test": "xo && ava"
