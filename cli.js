@@ -67,7 +67,7 @@ const argv = minimist(process.argv.slice(2), {
     });
 
     const results = await Promise.all(promises);
-    console.log([].concat(...results).join('\n'));
+    console.log(results.flat().join('\n'));
     process.exit(0);
   } catch (error) {
     console.error(error);
