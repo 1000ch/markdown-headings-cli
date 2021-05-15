@@ -2,9 +2,21 @@
   "name": "markdown-headings-cli",
   "version": "2.0.0",
   "description": "Command line interface for markdown-headings",
-  "scripts": {
-    "test": "xo && ava"
+  "homepage": "https://github.com/1000ch/markdown-headings-cli#readme",
+  "bugs": {
+    "url": "https://github.com/1000ch/markdown-headings-cli/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1000ch/markdown-headings-cli.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Shogo Sensui",
+    "email": "shogosensui@gmail.com",
+    "url": "https://github.com/1000ch"
+  },
+  "type": "module",
   "bin": {
     "markdown-headings": "cli.js"
   },
@@ -12,23 +24,12 @@
     "cli.js",
     "usage.txt"
   ],
-  "engines": {
-    "node": ">=12"
+  "scripts": {
+    "test": "xo && ava"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/1000ch/markdown-headings-cli.git"
+  "xo": {
+    "space": 2
   },
-  "author": {
-    "name": "Shogo Sensui",
-    "email": "shogosensui@gmail.com",
-    "url": "https://github.com/1000ch"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/1000ch/markdown-headings-cli/issues"
-  },
-  "homepage": "https://github.com/1000ch/markdown-headings-cli#readme",
   "dependencies": {
     "get-stdin": "^8.0.0",
     "globby": "^11.0.2",
@@ -41,7 +42,7 @@
     "execa": "^5.0.0",
     "xo": "^0.38.2"
   },
-  "xo": {
-    "space": 2
+  "engines": {
+    "node": ">=12.20.0"
   }
 }

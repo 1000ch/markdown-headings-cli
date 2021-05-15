@@ -1,18 +1,19 @@
 #!/usr/bin/env node
-const {promisify} = require('util');
-const path = require('path');
-const fs = require('fs');
-const minimist = require('minimist');
-const globby = require('globby');
-const getStdin = require('get-stdin');
-const markdownHeadings = require('markdown-headings');
+import path from 'node:path';
+import {promises as fs} from 'node:fs';
+import minimist from 'minimist';
+import globby from 'globby';
+import getStdin from 'get-stdin';
+import markdownHeadings from 'markdown-headings';
 
-const readFile = promisify(fs.readFile);
+async function getVersion() {
+  const {version} = JSON.parse(await fs.readFile('package.json', 'utf8'));
 
-const getVersion = () => Promise.resolve(require('./package').version);
+  return version;
+}
 
 async function getHelp() {
-  const buffer = await readFile(path.resolve(__dirname, 'usage.txt'));
+  const buffer = await fs.readFile('usage.txt', 'utf8');
 
   return buffer.toString();
 }
@@ -59,7 +60,7 @@ const argv = minimist(process.argv.slice(2), {
   try {
     const files = await getFiles(argv._);
     const promises = files.map(async file => {
-      const buffer = await readFile(file);
+      const buffer = await fs.readFile(file);
       const headings = await markdownHeadings(buffer);
       headings.unshift(path.basename(file));
 

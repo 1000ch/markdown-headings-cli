@@ -1,7 +1,6 @@
-const fs = require('fs');
-const test = require('ava');
-const execa = require('execa');
-const pkg = require('./package');
+import {promises as fs} from 'node:fs';
+import test from 'ava';
+import execa from 'execa';
 
 const expected = [
   'readme.md',
@@ -13,13 +12,14 @@ const expected = [
 
 test('outputs version', async t => {
   const {stdout} = await execa.node('./cli.js', ['-v']);
+  const {version} = JSON.parse(await fs.readFile('package.json', 'utf8'));
 
-  t.is(stdout, pkg.version);
+  t.is(stdout, version);
 });
 
 test('outputs usage', async t => {
   const {stdout} = await execa.node('./cli.js', ['-h']);
-  const help = fs.readFileSync('./usage.txt', 'utf-8');
+  const help = await fs.readFile('usage.txt', 'utf-8');
 
   t.is(stdout, help);
 });
