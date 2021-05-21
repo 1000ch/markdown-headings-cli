@@ -31,7 +31,7 @@
     "space": 2
   },
   "dependencies": {
-    "get-stdin": "^8.0.0",
+    "get-stdin": "^9.0.0",
     "globby": "^11.0.2",
     "is-string": "^1.0.5",
     "markdown-headings": "^2.0.0",
