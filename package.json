@@ -34,7 +34,7 @@
     "get-stdin": "^9.0.0",
     "globby": "^11.0.3",
     "is-string": "^1.0.6",
-    "markdown-headings": "^2.0.0",
+    "markdown-headings": "^3.0.0",
     "minimist": "^1.2.0"
   },
   "devDependencies": {
