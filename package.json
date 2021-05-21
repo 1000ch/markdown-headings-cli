@@ -1,6 +1,6 @@
 {
   "name": "markdown-headings-cli",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Command line interface for markdown-headings",
   "homepage": "https://github.com/1000ch/markdown-headings-cli#readme",
   "bugs": {
