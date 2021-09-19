@@ -7,7 +7,7 @@ const expected = [
   '# markdown-headings-cli',
   '## Install',
   '## Usage',
-  '## License'
+  '## License',
 ].join('\n');
 
 test('outputs version', async t => {

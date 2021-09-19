@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-import path from 'node:path';
 import {promises as fs} from 'node:fs';
+import path from 'node:path';
+import process from 'node:process';
 import minimist from 'minimist';
-import globby from 'globby';
+import {globby} from 'globby';
 import getStdin from 'get-stdin';
 import markdownHeadings from 'markdown-headings';
 
@@ -28,13 +29,13 @@ const argv = minimist(process.argv.slice(2), {
   alias: {
     h: 'help',
     s: 'stdin',
-    v: 'version'
+    v: 'version',
   },
   boolean: [
     'help',
     'stdin',
-    'version'
-  ]
+    'version',
+  ],
 });
 
 (async () => {
