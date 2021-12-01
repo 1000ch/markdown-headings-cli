@@ -17,6 +17,7 @@
     "url": "https://github.com/1000ch"
   },
   "type": "module",
+  "exports": "./cli.js",
   "bin": {
     "markdown-headings": "cli.js"
   },
@@ -39,8 +40,8 @@
   },
   "devDependencies": {
     "ava": "^3.15.0",
-    "execa": "^5.1.1",
-    "xo": "^0.44.0"
+    "execa": "^6.0.0",
+    "xo": "^0.47.0"
   },
   "engines": {
     "node": ">=12.20.0"
