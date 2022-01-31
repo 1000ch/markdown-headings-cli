@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "get-stdin": "^9.0.0",
-    "globby": "^12.0.2",
+    "globby": "^13.1.0",
     "is-string": "^1.0.6",
     "markdown-headings": "^3.0.0",
     "minimist": "^1.2.0"
