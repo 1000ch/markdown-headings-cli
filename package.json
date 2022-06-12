@@ -33,15 +33,15 @@
   },
   "dependencies": {
     "get-stdin": "^9.0.0",
-    "globby": "^12.0.2",
+    "globby": "^13.1.1",
     "is-string": "^1.0.6",
-    "markdown-headings": "^3.0.0",
-    "minimist": "^1.2.0"
+    "markdown-headings": "^4.0.0",
+    "minimist": "^1.2.6"
   },
   "devDependencies": {
-    "ava": "^4.0.0",
-    "execa": "^6.0.0",
-    "xo": "^0.47.0"
+    "ava": "^4.3.0",
+    "execa": "^6.1.0",
+    "xo": "^0.50.0"
   },
   "engines": {
     "node": ">=12.20.0"

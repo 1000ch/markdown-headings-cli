@@ -19,7 +19,7 @@ test('outputs version', async t => {
 
 test('outputs usage', async t => {
   const {stdout} = await execa('./cli.js', ['-h']);
-  const help = await fs.readFile('usage.txt', 'utf-8');
+  const help = await fs.readFile('usage.txt', 'utf8');
 
   t.is(stdout, help);
 });
