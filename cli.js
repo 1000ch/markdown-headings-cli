@@ -19,8 +19,8 @@ async function getHelp() {
   return buffer.toString();
 }
 
-async function getFiles(args) {
-  const files = await globby(args, {nodir: true});
+async function getFiles(patterns) {
+  const files = await globby(patterns, {nodir: true});
 
   return files.map(file => path.resolve(process.cwd(), file));
 }
@@ -38,41 +38,39 @@ const argv = minimist(process.argv.slice(2), {
   ],
 });
 
-(async () => {
-  if (argv.v || argv.version) {
-    const version = await getVersion();
-    console.log(version);
-    process.exit(0);
-  }
+if (argv.v || argv.version) {
+  const version = await getVersion();
+  console.log(version);
+  process.exit(0);
+}
 
-  if (argv.h || argv.help) {
-    const help = await getHelp();
-    console.log(help);
-    process.exit(0);
-  }
+if (argv.h || argv.help) {
+  const help = await getHelp();
+  console.log(help);
+  process.exit(0);
+}
 
-  if (argv.stdin) {
-    const stdin = await getStdin();
-    const headings = await markdownHeadings(stdin);
-    console.log(headings.join('\n'));
-    process.exit(0);
-  }
+if (argv.stdin) {
+  const stdin = await getStdin();
+  const headings = await markdownHeadings(stdin);
+  console.log(headings.join('\n'));
+  process.exit(0);
+}
 
-  try {
-    const files = await getFiles(argv._);
-    const promises = files.map(async file => {
-      const buffer = await fs.readFile(file);
-      const headings = await markdownHeadings(buffer);
-      headings.unshift(path.basename(file));
+try {
+  const files = await getFiles(argv._);
+  const promises = files.map(async file => {
+    const buffer = await fs.readFile(file);
+    const headings = await markdownHeadings(buffer);
+    headings.unshift(path.basename(file));
 
-      return headings;
-    });
+    return headings;
+  });
 
-    const results = await Promise.all(promises);
-    console.log(results.flat().join('\n'));
-    process.exit(0);
-  } catch (error) {
-    console.error(error);
-    process.exit(1);
-  }
-})();
+  const results = await Promise.all(promises);
+  console.log(results.flat().join('\n'));
+  process.exit(0);
+} catch (error) {
+  console.error(error);
+  process.exit(1);
+}

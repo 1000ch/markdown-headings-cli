@@ -1,4 +1,4 @@
-# markdown-headings-cli ![GitHub Actions Status](https://github.com/1000ch/markdown-headings-cli/workflows/test/badge.svg?branch=main)
+# markdown-headings-cli ![GitHub Actions Status](https://github.com/1000ch/markdown-headings-cli/actions/workflows/test.yml/badge.svg)
 
 Command line interface for [markdown-headings](https://github.com/1000ch/markdown-headings).
 
